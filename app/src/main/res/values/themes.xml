@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme -->
     <style name="Theme.ENightClub" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/neon_purple</item>
         <item name="colorPrimaryVariant">@color/neon_purple_dark</item>
@@ -17,6 +16,6 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="bottomNavigationStyle">@style/Widget.ENightClub.BottomNavigationView</item>
     </style>
 </resources>
