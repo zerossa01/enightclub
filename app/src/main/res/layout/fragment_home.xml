@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:paddingBottom="16dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Top Bar -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingEnd="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_xxl"
+            android:paddingBottom="@dimen/spacing_base"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Location + Notification -->
+            <LinearLayout
+                android:id="@+id/locationContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/notificationBtn">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Los Angeles, CA"
+                    android:textAppearance="@style/TextAppearance.ENightClub.Caption.Tertiary"
+                    android:drawableStart="@drawable/ic_venues"
+                    android:drawablePadding="4dp"
+                    android:drawableTint="@color/neon_cyan" />
+
+                <TextView
+                    android:id="@+id/greetingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/home_greeting"
+                    android:textAppearance="@style/TextAppearance.ENightClub.Heading" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/home_subtitle"
+                    android:textAppearance="@style/TextAppearance.ENightClub.Body.Secondary" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/notificationBtn"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_card_dark"
+                android:src="@drawable/ic_notification"
+                android:padding="10dp"
+                android:contentDescription="@string/cd_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/notificationDot"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/ic_online_status"
+                app:layout_constraintEnd_toEndOf="@id/notificationBtn"
+                app:layout_constraintTop_toTopOf="@id/notificationBtn"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Search Bar -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchCard"
+            style="@style/Widget.ENightClub.SearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_bar_height"
+            android:layout_marginStart="@dimen/spacing_base"
+            android:layout_marginEnd="@dimen/spacing_base"
+            android:layout_marginTop="@dimen/spacing_sm"
+            app:layout_constraintTop_toBottomOf="@id/topBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/spacing_base"
+                android:paddingEnd="@dimen/spacing_base">
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/events_search"
+                    android:textAppearance="@style/TextAppearance.ENightClub.Caption.Tertiary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/searchIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Featured Events Section -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/featuredSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            app:layout_constraintTop_toBottomOf="@id/searchCard">
+
+            <TextView
+                android:id="@+id/featuredTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/spacing_base"
+                android:text="@string/home_featured_events"
+                android:textAppearance="@style/TextAppearance.ENightClub.Title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/featuredSeeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/spacing_base"
+                android:text="@string/home_see_all"
+                android:textAppearance="@style/TextAppearance.ENightClub.Caption"
+                android:textColor="@color/neon_purple_light"
+                android:padding="@dimen/spacing_sm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Featured Events Horizontal RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/featuredEventsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingEnd="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_md"
+            app:layout_constraintTop_toBottomOf="@id/featuredSection"
+            tools:itemCount="3"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_event_card" />
+
+        <!-- Trending Parties Section -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/trendingSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            app:layout_constraintTop_toBottomOf="@id/featuredEventsRecycler">
+
+            <TextView
+                android:id="@+id/trendingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/spacing_base"
+                android:text="@string/home_trending_parties"
+                android:textAppearance="@style/TextAppearance.ENightClub.Title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="@dimen/spacing_base"
+                android:src="@drawable/ic_trending"
+                app:layout_constraintBottom_toBottomOf="@id/trendingTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/trendingTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Trending Events Horizontal RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trendingEventsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingEnd="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_md"
+            app:layout_constraintTop_toBottomOf="@id/trendingSection"
+            tools:itemCount="4"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_event_card" />
+
+        <!-- Nearby Venues Section -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nearbySection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            app:layout_constraintTop_toBottomOf="@id/trendingEventsRecycler">
+
+            <TextView
+                android:id="@+id/nearbyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/spacing_base"
+                android:text="@string/home_nearby_venues"
+                android:textAppearance="@style/TextAppearance.ENightClub.Title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nearbySeeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/spacing_base"
+                android:text="@string/home_see_all"
+                android:textAppearance="@style/TextAppearance.ENightClub.Caption"
+                android:textColor="@color/neon_purple_light"
+                android:padding="@dimen/spacing_sm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Nearby Venues RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nearbyVenuesRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingEnd="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_md"
+            app:layout_constraintTop_toBottomOf="@id/nearbySection"
+            tools:itemCount="3"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_venue_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

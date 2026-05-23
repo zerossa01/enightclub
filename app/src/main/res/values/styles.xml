@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Text Styles ===== -->
+    <style name="TextAppearance.ENightClub.Display" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">@dimen/text_display</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Heading" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">@dimen/text_heading</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Title" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Body.Secondary" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Caption.Tertiary">
+        <item name="android:textColor">@color/text_tertiary</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="android:textSize">@dimen/text_overline</item>
+        <item name="android:textColor">@color/neon_purple_light</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <style name="TextAppearance.ENightClub.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- ===== Button Styles ===== -->
+    <style name="Widget.ENightClub.Button.NeonPurple" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/bg_button_neon</item>
+        <item name="android:textAppearance">@style/TextAppearance.ENightClub.Button</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:paddingStart">@dimen/button_padding_h</item>
+        <item name="android:paddingEnd">@dimen/button_padding_h</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.ENightClub.Button.NeonOutline" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/TextAppearance.ENightClub.Button</item>
+        <item name="android:textColor">@color/neon_purple</item>
+        <item name="strokeColor">@color/neon_purple</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:paddingStart">@dimen/button_padding_h</item>
+        <item name="android:paddingEnd">@dimen/button_padding_h</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.ENightClub.Button.Pill" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/bg_button_neon</item>
+        <item name="android:textAppearance">@style/TextAppearance.ENightClub.Button</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:minHeight">@dimen/button_height_sm</item>
+        <item name="android:paddingStart">@dimen/spacing_lg</item>
+        <item name="android:paddingEnd">@dimen/spacing_lg</item>
+        <item name="cornerRadius">@dimen/button_corner_radius_pill</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- ===== Card Styles ===== -->
+    <style name="Widget.ENightClub.Card.Dark" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="strokeColor">@color/white_05</item>
+        <item name="strokeWidth">@dimen/card_stroke_width</item>
+    </style>
+
+    <style name="Widget.ENightClub.Card.Glass" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/white_05</item>
+        <item name="strokeColor">@color/white_10</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- ===== Chip Styles ===== -->
+    <style name="Widget.ENightClub.Chip.Filter" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="chipBackgroundColor">@color/bg_card</item>
+        <item name="chipStrokeColor">@color/white_05</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipCornerRadius">@dimen/chip_corner_radius</item>
+        <item name="chipMinHeight">@dimen/button_height_sm</item>
+        <item name="android:textAppearance">@style/TextAppearance.ENightClub.Caption</item>
+        <item name="chipStartPadding">12dp</item>
+        <item name="chipEndPadding">12dp</item>
+    </style>
+
+    <!-- ===== Bottom Navigation ===== -->
+    <style name="Widget.ENightClub.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/bg_bottom_nav</item>
+        <item name="itemIconTint">@color/bottom_nav_color_selector</item>
+        <item name="itemTextColor">@color/bottom_nav_color_selector</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.ENightClub.BottomNav.ActiveIndicator</item>
+        <item name="android:elevation">8dp</item>
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+
+    <style name="Widget.ENightClub.BottomNav.ActiveIndicator" parent="Widget.MaterialComponents.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/neon_purple_glow</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.ENightClub.BottomNavIndicator</item>
+    </style>
+
+    <style name="ShapeAppearance.ENightClub.BottomNavIndicator" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+    </style>
+
+    <!-- ===== Search Bar ===== -->
+    <style name="Widget.ENightClub.SearchBar" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/search_bar_corner_radius</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/bg_card</item>
+    </style>
+
+    <!-- ===== Profile Menu Item ===== -->
+    <style name="Widget.ENightClub.ProfileMenuItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/profile_menu_item_height</item>
+        <item name="android:paddingStart">@dimen/spacing_base</item>
+        <item name="android:paddingEnd">@dimen/spacing_base</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- ===== Rating Bar ===== -->
+    <style name="Widget.ENightClub.RatingBar.Small" parent="Widget.AppCompat RatingBar.Small">
+        <item name="android:progressTint">@color/star_filled</item>
+        <item name="android:progressBackgroundTint">@color/star_empty</item>
+    </style>
+
+    <!-- ===== Divider ===== -->
+    <style name="Widget.ENightClub.Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">@color/divider</item>
+    </style>
+
+    <!-- ===== Avatar ===== -->
+    <style name="Widget.ENightClub.Avatar">
+        <item name="android:layout_width">@dimen/avatar_md</item>
+        <item name="android:layout_height">@dimen/avatar_md</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.ENightClub.Avatar</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.ENightClub.Avatar" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

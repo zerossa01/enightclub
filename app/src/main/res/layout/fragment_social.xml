@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".ui.social.SocialFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Top Bar -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingEnd="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_xxl"
+            android:paddingBottom="@dimen/spacing_base"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/social_title"
+                android:textAppearance="@style/TextAppearance.ENightClub.Heading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/onlineNowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="12 friends online"
+                android:textAppearance="@style/TextAppearance.ENightClub.Body.Secondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+            <ImageButton
+                android:id="@+id/messageBtn"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_card_dark"
+                android:src="@drawable/ic_comment"
+                android:padding="10dp"
+                android:contentDescription="@string/social_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Stories Horizontal Scroll -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/storiesRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingEnd="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_md"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            tools:itemCount="6"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_social_story" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider"
+            style="@style/Widget.ENightClub.Divider"
+            android:layout_marginStart="@dimen/spacing_base"
+            android:layout_marginEnd="@dimen/spacing_base"
+            android:layout_marginTop="@dimen/spacing_base"
+            app:layout_constraintTop_toBottomOf="@id/storiesRecycler" />
+
+        <!-- Activity Feed Label -->
+        <TextView
+            android:id="@+id/feedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_md"
+            android:text="@string/social_feed"
+            android:textAppearance="@style/TextAppearance.ENightClub.Overline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <!-- Activity Feed -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/spacing_base"
+            android:paddingEnd="@dimen/spacing_base"
+            android:paddingTop="@dimen/spacing_sm"
+            android:paddingBottom="@dimen/spacing_base"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feedLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- FAB for new story -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addStoryFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/spacing_base"
+        android:layout_marginBottom="@dimen/spacing_base"
+        android:src="@drawable/ic_edit"
+        android:contentDescription="@string/social_add_story"
+        app:backgroundTint="@color/neon_purple"
+        app:tint="@color/text_primary"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:fabSize="normal" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCard"
+    style="@style/Widget.ENightClub.Card.Dark"
+    android:layout_width="@dimen/event_card_width"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/spacing_base"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Event Image -->
+        <ImageView
+            android:id="@+id/eventImage"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/bg_elevated"
+            android:contentDescription="@string/cd_event_image"
+            android:scaleType="centerCrop"
+            tools:src="@color/neon_purple_dark"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Gradient Overlay on Image -->
+        <View
+            android:id="@+id/imageOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_overlay_gradient_bottom"
+            app:layout_constraintBottom_toBottomOf="@id/eventImage" />
+
+        <!-- Date Badge -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dateBadge"
+            android:layout_width="48dp"
+            android:layout_height="56dp"
+            android:layout_margin="@dimen/spacing_sm"
+            app:cardBackgroundColor="@color/neon_purple"
+            app:cardCornerRadius="@dimen/card_corner_radius_sm"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dateDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FRI"
+                    android:textAppearance="@style/TextAppearance.ENightClub.Caption"
+                    android:textColor="@color/text_primary"
+                    android:textSize="9sp" />
+
+                <TextView
+                    android:id="@+id/dateNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24"
+                    android:textAppearance="@style/TextAppearance.ENightClub.Heading"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Price Badge -->
+        <TextView
+            android:id="@+id/priceBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_sm"
+            android:background="@drawable/bg_button_gradient"
+            android:paddingStart="10dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="4dp"
+            android:text="$35"
+            android:textAppearance="@style/TextAppearance.ENightClub.Caption"
+            android:textColor="@color/text_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Event Name -->
+        <TextView
+            android:id="@+id/eventName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_base"
+            android:layout_marginEnd="@dimen/spacing_base"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Neon Nights Festival"
+            android:textAppearance="@style/TextAppearance.ENightClub.Subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventImage" />
+
+        <!-- Venue + DJ Row -->
+        <TextView
+            android:id="@+id/eventVenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_base"
+            android:layout_marginTop="6dp"
+            android:drawableStart="@drawable/ic_venues"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/neon_cyan"
+            android:text="The Underground"
+            android:textAppearance="@style/TextAppearance.ENightClub.Caption"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventName" />
+
+        <TextView
+            android:id="@+id/eventDj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_base"
+            android:layout_marginTop="2dp"
+            android:text="DJ Lumina • 10PM - 4AM"
+            android:textAppearance="@style/TextAppearance.ENightClub.Caption.Tertiary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventVenue" />
+
+        <!-- Get Tickets Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/getTicketsBtn"
+            style="@style/Widget.ENightClub.Button.NeonPurple"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_sm"
+            android:layout_marginStart="@dimen/spacing_base"
+            android:layout_marginEnd="@dimen/spacing_base"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:layout_marginBottom="@dimen/spacing_base"
+            android:text="@string/events_get_tickets"
+            android:textSize="@dimen/text_caption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDj" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
